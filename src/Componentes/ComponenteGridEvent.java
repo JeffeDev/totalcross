@@ -82,6 +82,10 @@ public class ComponenteGridEvent extends MainWindow {
 			GridEvent ge = (GridEvent) event;
 			System.out.println(gridCarros.getCellText(ge.row, ge.col));
 			break;
+		case GridEvent.CHECK_CHANGED_EVENT :
+			GridEvent geGheck = (GridEvent) event;
+			System.out.println(String.format("A linha %s foi selecionada", geGheck.row));
+			break;
 		}
 		super.onEvent(event);
 	}
