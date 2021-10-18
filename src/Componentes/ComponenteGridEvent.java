@@ -78,14 +78,21 @@ public class ComponenteGridEvent extends MainWindow {
 	@Override
 	public void onEvent(Event event) {
 		switch(event.type) {
-		case GridEvent.SELECTED_EVENT:
+		case GridEvent.SELECTED_EVENT:{
 			GridEvent ge = (GridEvent) event;
 			System.out.println(gridCarros.getCellText(ge.row, ge.col));
 			break;
-		case GridEvent.CHECK_CHANGED_EVENT :
+		}
+		case GridEvent.CHECK_CHANGED_EVENT :{
 			GridEvent geGheck = (GridEvent) event;
 			System.out.println(String.format("A linha %s foi selecionada", geGheck.row));
 			break;
+		}
+		case GridEvent.TEXT_CHANGED_EVENT : {
+			GridEvent geText = (GridEvent) event;
+			System.out.println(gridCarros.getCellText(geText.row, geText.col));
+			break;
+		}
 		}
 		super.onEvent(event);
 	}
